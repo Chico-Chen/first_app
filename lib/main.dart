@@ -1,22 +1,26 @@
+//flutter expose to use
 import 'package:flutter/material.dart';
-
-import './quiz.dart';
 import './result.dart';
-// void main() {
-//   runApp(MyApp());
-// }
+import './quiz.dart';
 
+//entry for the application
 void main() => runApp(MyApp());
 
+//When external input data change, StatefulWidget should be rebuilt basically
+//Why does it have two classes(MyApp, MyAppState)
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _MyAppState();
   }
 }
 
+//State is a generic class, it's attach to MyApp widget
+//Implementation: When questionIndex changes, StatefulWidget 'MyApp' also recreates
+//MyAppState is a persistant
+//underscore turns a public class into private
 class _MyAppState extends State<MyApp> {
+
   final _questions = const [
     {
       'questionText': 'What\'s your favorite color?',
@@ -75,11 +79,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    // var dummy = const ['Hello'];
-    // dummy.add('Max');
-    // print(dummy);
-    // dummy = [];
-    // questions = []; // does not work if questions is a const
 
     return MaterialApp(
       home: Scaffold(
