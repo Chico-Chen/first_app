@@ -53,6 +53,7 @@ class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
   var _totalScore = 0;
 
+  //restart the quiz
   void _resetQuiz() {
     setState(() {
       _questionIndex = 0;
